@@ -56,7 +56,8 @@ io.on('connection', socket => {
       tMode: toggles.t > count/2,
       lifeOn: toggles.life > count/2
     };
-    io.emit('stateUpdate', agg);
+    socket.broadcast.emit('stateUpdate', agg)
+
   });
 });
 
